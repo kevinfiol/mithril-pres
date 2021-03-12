@@ -1,0 +1,28 @@
+dependencies:
+  mithril: 2.0.4
+devDependencies:
+  cheap-watch: 1.0.3
+  esbuild: 0.9.1
+lockfileVersion: 5.2
+packages:
+  /cheap-watch/1.0.3:
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-xC5CruMhLzjPwJ5ecUxGu1uGmwJQykUhqd2QrCrYbwvsFYdRyviu6jG9+pccwDXJR/OpmOTOJ9yLFunVgQu9wg==
+  /esbuild/0.9.1:
+    dev: true
+    hasBin: true
+    requiresBuild: true
+    resolution:
+      integrity: sha512-2A0lJxpkV9tvwz+tCD6Ww1bvbZKvH4zBz8G8Dx/MhLwmJ23p8XRIz44ObWt8dpDpZARzhiahacQ+b/V1GJbx0A==
+  /mithril/2.0.4:
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-mgw+DMZlhMS4PpprF6dl7ZoeZq5GGcAuWnrg5e12MvaGauc4jzWsDZtVGRCktsiQczOEUr2K5teKbE5k44RlOg==
+specifiers:
+  cheap-watch: ^1.0.3
+  esbuild: ^0.9.1
+  mithril: ^2.0.4
