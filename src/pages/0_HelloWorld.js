@@ -2,7 +2,7 @@ import m from 'mithril';
 
 var HelloWorld = {
     view: function() {
-        return m('h2', 'hello world (from mithril.js)');
+        return m('h2', 'Hello World (from Mithril.js)');
     }
 };
 

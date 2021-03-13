@@ -1,27 +1,40 @@
 import m from 'mithril';
 
-var timer = 0;
-
-setInterval(function() {
-    timer += 1;
-    m.redraw();
-}, 1000);
+var seconds = 0;
+var timer = undefined;
 
 var Async = {
     oninit: function() {
         // component initialization
-        timer = 0;
+        seconds = 0;
+
+        timer = setInterval(function() {
+            seconds += 1;
+            m.redraw();
+        }, 1000);
+    },
+
+    onremove: function() {
+        // component removal
+        clearInterval(timer);
     },
 
     view: function() {
         return m('div',
+            m('h2', 'Async and Lifecycle Methods'),
+
             m('p',
                 'If an asynchronous event happens outside of Mithril,',
                 ' you can trigger a manual redraw to let Mithril know when to redraw.',
                 ' This is called a "manual redraw".'
             ),
 
-            m('h2', 'Seconds: ' + timer)
+            m('p',
+                'This example uses ',
+                m('code', 'setInterval')
+            ),
+
+            m('h2', 'Seconds: ' + seconds)
         );
     }
 };

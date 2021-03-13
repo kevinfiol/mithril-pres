@@ -3,8 +3,10 @@ import m from 'mithril';
 var counterNumber = 0;
 
 var Counter = {
-    view: function(vnode) {
+    view: function() {
         return m('div',
+            m('h2', 'Counter'),
+
             m('p',
                 'This is an obligatory counter example. This illustrates both state, and state alterations.'
             ),

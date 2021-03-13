@@ -13,7 +13,7 @@ var ChildComponents = {
     view: function() {
         return m('div',
             m('p',
-                'Using component composition is easy! Pass component properties using ',
+                'Component composition is easy! Pass component properties using ',
                 m('code', 'vnode.attrs'),
                 '.'
             ),

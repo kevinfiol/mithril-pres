@@ -6,6 +6,8 @@ var ClosureCounter = function() {
     return {
         view: function() {
             return m('div',
+                m('h2', 'Closure Counter with Local State'),
+
                 m('p',
                     'Encapsulated, local state using closures. Look ma, no hooks!',
                     m('br'),
