@@ -10,6 +10,10 @@ import Async from './pages/5_Async.js';
 import DataBinding from './pages/6_DataBinding.js';
 import ChildComponents from './pages/7_ChildComponents.js';
 import DataMapping from './pages/8_DataMapping.js';
+import ThirdPartyLibrary from './pages/9_ThirdPartyLibrary.js';
+import Requests from './pages/10_Requests.js';
+import RouteParams from './pages/11_RouteParams';
+import Streams from './pages/12_Streams.js';
 
 // global state for current page
 var currentPage = 0;
@@ -23,7 +27,11 @@ var pages = [
     '/async',
     '/databinding',
     '/child_components',
-    '/data_mapping'
+    '/data_mapping',
+    '/third_party_library_integration',
+    '/requests',
+    '/route_params/kevin',
+    '/streams'
 ];
 
 var setPage = function(pageIndex) {
@@ -133,6 +141,42 @@ m.route(document.getElementById('app'), '/', {
         },
         render: function() {
             return m(Layout, m(DataMapping));
+        }
+    },
+
+    '/third_party_library_integration': {
+        onmatch: function() {
+            currentPage = 9;
+        },
+        render: function() {
+            return m(Layout, m(ThirdPartyLibrary));
+        }
+    },
+
+    '/requests': {
+        onmatch: function() {
+            currentPage = 10;
+        },
+        render: function() {
+            return m(Layout, m(Requests));
+        }
+    },
+
+    '/route_params/:user': {
+        onmatch: function() {
+            currentPage = 11;
+        },
+        render: function(vnode) {
+            return m(Layout, m(RouteParams, { user: vnode.attrs.user }));
+        }
+    },
+
+    '/streams': {
+        onmatch: function() {
+            currentPage = 12;
+        },
+        render: function() {
+            return m(Layout, m(Streams));
         }
     }
 });

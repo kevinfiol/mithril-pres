@@ -1,21 +1,30 @@
 import m from 'mithril';
 
+var employeeStyles = {
+    padding: '0.6rem',
+    margin: '0.6rem auto',
+    background: 'rgba(0, 0, 0, 0.1)'
+};
+
 var Employee = {
     view: function(vnode) {
-        return [
+        return m('div', { style: employeeStyles },
             m('h4', 'Employee #' + vnode.attrs.number),
             m('p', 'name: ' + vnode.attrs.name)
-        ];
+        );
     }
 };
 
 var ChildComponents = {
     view: function() {
         return m('div',
+            m('h2', 'Child Components and attrs'),
+
             m('p',
                 'Component composition is easy! Pass component properties using ',
                 m('code', 'vnode.attrs'),
-                '.'
+                '.',
+                ' (attrs are to Mithril what props are to React)'
             ),
 
             m('h2', 'List of Employees'),

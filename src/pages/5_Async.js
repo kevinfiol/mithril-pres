@@ -25,7 +25,7 @@ var Async = {
 
             m('p',
                 'If an asynchronous event happens outside of Mithril,',
-                ' you can trigger a manual redraw to let Mithril know when to redraw.',
+                ' you can trigger a manual redraw using ', m('code', 'm.redraw()'), ' to let Mithril know when to refresh the view.',
                 ' This is called a "manual redraw".'
             ),
 
