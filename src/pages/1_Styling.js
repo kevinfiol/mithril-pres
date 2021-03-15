@@ -8,9 +8,10 @@ var divStyles = {
 var Styling = {
     view: function() {
         return m('div',
-            m('h2', 'Styling'),
+            m('h2', 'Styling & Attributes'),
 
-            m('div', { style: divStyles },
+            // <div class="my-div" style="padding: 1rem; background: rgba(0, 0, 0, 0.1)">...</div>
+            m('div', { className: 'my-div', style: divStyles },
                 m('p',
                     'Rendering elements with styles or attributes is easy!'
                 ),
@@ -21,7 +22,7 @@ var Styling = {
 
                 m('p', 'The following button is disabled using HTML attributes: '),
 
-                m('button[disabled]', 'you can\'t click me ')
+                m('button[disabled="true"]', 'you can\'t click me ')
             )
         );
     }

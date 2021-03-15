@@ -1,7 +1,7 @@
 import m from 'mithril';
 
 var ClosureCounter = function() {
-    number = 0;
+    var number = 0;
 
     return {
         view: function() {
@@ -15,7 +15,7 @@ var ClosureCounter = function() {
                     
                     m('br'),
                     m('em', 'Note: '),
-                    'Class Components are supported, but Functional Components are preferred (and work in IE11).'
+                    'Class Components are supported, but Functional Components are preferred (and work in IE11 out of the box).'
                 ),
 
                 m('h2', number),

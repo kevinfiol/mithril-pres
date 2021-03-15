@@ -21,19 +21,20 @@ var Streams = function() {
 
                 m('p',
                     'Streams are an observable, reactive data structure that allow you to describe the relationships between variables.',
+                    ' Streams are useful for implementing computed properties, and bi-directional data-bindings.'
                 ),
 
                 // controls for x & y
                 m('h3', 'x:'),
                 m('input[type="number"]', {
                     value: x(),
-                    onchange: function(ev) { x(parseInt(ev.target.value)) } // need to do oninput too?
+                    oninput: function(ev) { x(parseInt(ev.target.value)) } // need to do oninput too?
                 }),
 
                 m('h3', 'y:'),
                 m('input[type="number"]', {
                     value: y(),
-                    onchange: function(ev) { y(parseInt(ev.target.value)) }
+                    oninput: function(ev) { y(parseInt(ev.target.value)) }
                 }),
 
                 m('h3', 'sum of x and y: ', sum()),

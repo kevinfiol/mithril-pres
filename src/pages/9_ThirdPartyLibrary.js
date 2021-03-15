@@ -21,7 +21,6 @@ var ThirdPartyLibrary = {
         leaflet.marker([38.89, -77.03]).addTo(leafletMap)
             .bindPopup('Welcome to Washington D.C.')
             .openPopup();
-
     },
 
     onremove: function() {
@@ -34,7 +33,7 @@ var ThirdPartyLibrary = {
             m('h2', 'Third-Party Library Integration'),
 
             m('p',
-                'Mithril\'s lifecycle hooks are especially useful for third-party libraries.'
+                'Mithril\'s lifecycle hooks are especially useful for integrating third-party libraries.'
             ),
 
             m('div', { id: 'map', style: { height: '400px' } })

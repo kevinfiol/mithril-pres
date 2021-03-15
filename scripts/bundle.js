@@ -10,8 +10,9 @@ const outfile = '../dist/bundle.js';
 function bundle(config = {}) {
     const opts = {
         target: 'es5',
+        loader: { '.js': 'jsx' },
         jsxFactory: 'm',
-        jsxFragment: 'm.fragment',
+        jsxFragment: 'm.Fragment',
         entryPoints: [join(__dirname, entry)],
         bundle: true,
         minify: true,

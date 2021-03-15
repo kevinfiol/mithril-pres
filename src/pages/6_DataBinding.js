@@ -1,7 +1,7 @@
 import m from 'mithril';
 
 var DataBinding = function() {
-    var inputValue = '';
+    var inputValue = 'Default User';
 
     return {
         view: function() {
@@ -9,14 +9,13 @@ var DataBinding = function() {
                 m('h2', 'Data-binding'),
 
                 m('p',
-                    'Databinding involves capturing event values and binding them to your application state.',
-                    ' Unlike Angular, there is no two-way databinding (for better or for worse).',
-                    ' But there is another option that I will soon get to!'
+                    'Databinding involves capturing event values and binding them to your application state.'
                 ),
 
                 m('label', 'enter username:'),
                 m('input', {
                     type: 'text',
+                    value: inputValue,
                     oninput: function(ev) { inputValue = ev.target.value; }
                 }),
 

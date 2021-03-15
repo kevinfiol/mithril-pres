@@ -1,4 +1,5 @@
 import m from 'mithril';
+m.Fragment = { view: function(vnode) { return vnode.children; } };
 
 // pages
 import HelloWorld from './pages/0_HelloWorld.js';
@@ -14,6 +15,8 @@ import ThirdPartyLibrary from './pages/9_ThirdPartyLibrary.js';
 import Requests from './pages/10_Requests.js';
 import RouteParams from './pages/11_RouteParams';
 import Streams from './pages/12_Streams.js';
+import JSX from './pages/13_JSX.js';
+import End from './pages/14_End.js';
 
 // global state for current page
 var currentPage = 0;
@@ -31,7 +34,9 @@ var pages = [
     '/third_party_library_integration',
     '/requests',
     '/route_params/kevin',
-    '/streams'
+    '/streams',
+    '/jsx',
+    '/end'
 ];
 
 var setPage = function(pageIndex) {
@@ -177,6 +182,24 @@ m.route(document.getElementById('app'), '/', {
         },
         render: function() {
             return m(Layout, m(Streams));
+        }
+    },
+
+    '/jsx': {
+        onmatch: function() {
+            currentPage = 13;
+        },
+        render: function() {
+            return m(Layout, m(JSX));
+        }
+    },
+
+    '/end': {
+        onmatch: function() {
+            currentPage = 14;
+        },
+        render: function() {
+            return m(Layout, m(End));
         }
     }
 });

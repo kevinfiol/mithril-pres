@@ -1,6 +1,7 @@
 import m from 'mithril';
 
 var Requests = function() {
+    var loading = false;
     var characters = undefined;
     var inputValue = '';
 
@@ -11,26 +12,32 @@ var Requests = function() {
 
                 m('p',
                     'This example uses the built-in request utility, ', m('code', 'm.request'),
-                    '. While IE11 does not support ES6+ Promises natively, Mithril comes with a minimal Promise polyfill!'
+                    '. Mithril comes with a minimal Promise polyfill, so this works in IE11 out of the box.',
+                    ' Data from: ',
+                    m('a', { href: 'https://swapi.dev' }, 'swapi.dev')
                 ),
 
                 m('label', 'search for star wars character:'),
 
                 m('input', {
                     type: 'text',
+                    value: inputValue,
                     oninput: function(ev) { inputValue = ev.target.value; }
                 }),
 
                 m('button', {
-                    disabled: inputValue.trim() < 1,
+                    disabled: inputValue.trim() < 1 || loading,
                     onclick: function() {
+                        loading = true;
                         submitSearch(inputValue).then(function(results) {
                             characters = results;
+                            loading = false;
                         }).catch(function(emptyArr) {
                             characters = emptyArr;
+                            loading = false;
                         });
                     }
-                }, 'search!'),
+                }, loading ? 'loading...' : 'search'),
 
                 m('h3', 'results:'),
                 characters
