@@ -31,7 +31,7 @@ function startServer() {
         if (server) server.kill(0);
     }
 
-    server = spawn('./node_modules/.bin/sirv', ['./dist', '--dev', '--single', '--port', `${PORT}`], {
+    server = spawn(join(ROOT_DIR, 'node_modules/.bin/sirv'), ['./dist', '--dev', '--single', '--port', `${PORT}`], {
         cwd: ROOT_DIR,
         stdio: ['ignore', 'inherit', 'inherit'],
         shell: true
