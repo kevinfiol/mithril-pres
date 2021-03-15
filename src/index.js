@@ -1,5 +1,4 @@
 import m from 'mithril';
-m.Fragment = { view: function(vnode) { return vnode.children; } };
 
 // pages
 import HelloWorld from './pages/0_HelloWorld.js';
@@ -65,6 +64,7 @@ var Layout = {
     }
 };
 
+// https://mithril.js.org/route.html#mrouteprefix
 m.route.prefix = '';
 
 m.route(document.getElementById('app'), '/', {
