@@ -1,5 +1,5 @@
 
-name: Deploy to neocities
+name: Deploy to Github Pages
 
 # only run on changes to master
 on:
