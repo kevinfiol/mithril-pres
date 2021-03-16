@@ -8,15 +8,11 @@ var ClosureCounter = function() {
             return m('div',
                 m('h2', 'Closure Counter with Local State'),
 
-                m('p',
-                    'Encapsulated, local state using closures. Look ma, no hooks!',
-                    m('br'),
-                    'This is the Mithril community\'s favorite approach to local state.',
-                    
-                    m('br'),
-                    m('em', 'Note: '),
-                    'Class Components are supported, but Functional Components are preferred (and work in IE11 out of the box).'
-                ),
+                m('p', 'Encapsulated, local state using closures. Look ma, no hooks!'),
+                m('p', 'This is the Mithril community\'s favorite approach to local state.'),
+                m('em', 'Note: '),
+                m('p', 'Class Components are supported, but Closure Components are preferred for local state.'),
+                m('p', '(Closure Components work in IE11 out of the box)'),
 
                 m('h2', number),
 

@@ -22,13 +22,12 @@ var ChildComponents = {
 
             m('p',
                 'Component composition is easy! Pass component properties using ',
-                m('code', 'vnode.attrs'),
-                '.',
-                ' (attrs are to Mithril what props are to React)'
+                m('code', 'vnode.attrs')
             ),
 
-            m('h2', 'List of Employees'),
+            m('p','attrs are to Mithril what props are to React'),
 
+            m('h2', 'List of Employees'),
             m('h3', 'These are child components: '),
 
             m(Employee, {

@@ -7,9 +7,8 @@ var Counter = {
         return m('div',
             m('h2', 'Counter'),
 
-            m('p',
-                'This is an obligatory counter example. This illustrates both state, and state alterations.'
-            ),
+            m('p', 'This is an obligatory counter example.'),
+            m('p', 'This illustrates both state, and state alterations.'),
 
             m('h2', counterNumber),
 

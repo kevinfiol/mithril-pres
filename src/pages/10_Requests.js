@@ -5,6 +5,17 @@ var Requests = function() {
     var characters = undefined;
     var inputValue = '';
 
+    function onSubmit() {
+        loading = true;
+        submitSearch(inputValue).then(function(results) {
+            characters = results;
+            loading = false;
+        }).catch(function(emptyArr) {
+            characters = emptyArr;
+            loading = false;
+        });
+    }
+
     return {
         view: function() {
             return m('div',
@@ -19,25 +30,23 @@ var Requests = function() {
 
                 m('label', 'search for star wars character:'),
 
-                m('input', {
-                    type: 'text',
-                    value: inputValue,
-                    oninput: function(ev) { inputValue = ev.target.value; }
-                }),
 
-                m('button', {
-                    disabled: inputValue.trim() < 1 || loading,
-                    onclick: function() {
-                        loading = true;
-                        submitSearch(inputValue).then(function(results) {
-                            characters = results;
-                            loading = false;
-                        }).catch(function(emptyArr) {
-                            characters = emptyArr;
-                            loading = false;
-                        });
+                m('form', {
+                    onsubmit: function(ev) {
+                        ev.preventDefault();
+                        onSubmit();
                     }
-                }, loading ? 'loading...' : 'search'),
+                },
+                    m('input', {
+                        type: 'text',
+                        value: inputValue,
+                        oninput: function(ev) { inputValue = ev.target.value; }
+                    }),
+
+                    m('button[type="submit"]', {
+                        disabled: inputValue.trim() < 1 || loading,
+                    }, loading ? 'loading...' : 'search')
+                ),
 
                 m('h3', 'results:'),
                 characters

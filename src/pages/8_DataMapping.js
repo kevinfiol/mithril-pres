@@ -34,7 +34,6 @@ var DataMapping = {
             ),
 
             m('h2', 'List of Employees'),
-
             m('h3', 'These are child components: '),
 
             employees.map(function(employee) {

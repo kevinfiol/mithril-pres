@@ -8,9 +8,7 @@ var DataBinding = function() {
             return m('div',
                 m('h2', 'Data-binding'),
 
-                m('p',
-                    'Databinding involves capturing event values and binding them to your application state.'
-                ),
+                m('p', 'Databinding involves capturing event values and binding them to your application state.'),
 
                 m('label', 'enter username:'),
                 m('input', {

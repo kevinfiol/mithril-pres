@@ -19,10 +19,8 @@ var Streams = function() {
             return m('div',
                 m('h2', 'Streams'),
 
-                m('p',
-                    'Streams are an observable, reactive data structure that allow you to describe the relationships between variables.',
-                    ' Streams are useful for implementing computed properties, and bi-directional data-bindings.'
-                ),
+                m('p', 'Streams are an observable, reactive data structure that allow you to describe the relationships between variables.'),
+                m('p', 'Streams are useful for implementing computed properties, and bi-directional data-bindings.'),
 
                 // controls for x & y
                 m('h3', 'x:'),
