@@ -1,3 +1,4 @@
 node_modules
 dist/bundle.js
+dist/code_samples.js
 *.map

@@ -20,6 +20,9 @@ import End from './pages/14_End.js';
 // global state for current page
 var currentPage = 0;
 
+// global codeSamples Object; loaded by /dist/code_samples.js
+// see `/scripts/code_samples.js` for build script
+
 var pages = [
     '/',
     '/styling',
@@ -59,6 +62,14 @@ var Layout = {
 
             m('div', { style: { padding: '2rem 0' } },
                 vnode.children
+            ),
+
+            m('div',
+                m('pre',
+                    m('code',
+                        vnode.attrs.codeSample
+                    )
+                )
             )
         );
     }
@@ -73,7 +84,7 @@ m.route(document.getElementById('app'), '/', {
             currentPage = 0;
         },
         render: function() {
-            return m(Layout, m(HelloWorld));
+            return m(Layout, { codeSample: window.codeSamples['HelloWorld'] }, m(HelloWorld));
         }
     },
 
@@ -82,7 +93,7 @@ m.route(document.getElementById('app'), '/', {
             currentPage = 1;
         },
         render: function() {
-            return m(Layout, m(Styling));
+            return m(Layout, { codeSample: window.codeSamples['Styling'] }, m(Styling));
         }
     },
 
@@ -91,7 +102,7 @@ m.route(document.getElementById('app'), '/', {
             currentPage = 2;
         },
         render: function() {
-            return m(Layout, m(State));
+            return m(Layout, { codeSample: window.codeSamples['State'] }, m(State));
         }
     },
 
@@ -100,7 +111,7 @@ m.route(document.getElementById('app'), '/', {
             currentPage = 3;
         },
         render: function() {
-            return m(Layout, m(Counter));
+            return m(Layout, { codeSample: window.codeSamples['Counter'] }, m(Counter));
         }
     },
 
@@ -109,7 +120,7 @@ m.route(document.getElementById('app'), '/', {
             currentPage = 4;
         },
         render: function() {
-            return m(Layout, m(ClosureCounter));
+            return m(Layout, { codeSample: window.codeSamples['ClosureCounter'] }, m(ClosureCounter));
         }
     },
 
@@ -118,7 +129,7 @@ m.route(document.getElementById('app'), '/', {
             currentPage = 5;
         },
         render: function() {
-            return m(Layout, m(Async));
+            return m(Layout, { codeSample: window.codeSamples['Async'] }, m(Async));
         }
     },
 
@@ -127,7 +138,7 @@ m.route(document.getElementById('app'), '/', {
             currentPage = 6;
         },
         render: function() {
-            return m(Layout, m(DataBinding));
+            return m(Layout, { codeSample: window.codeSamples['DataBinding'] }, m(DataBinding));
         }
     },
 
@@ -136,7 +147,7 @@ m.route(document.getElementById('app'), '/', {
             currentPage = 7;
         },
         render: function() {
-            return m(Layout, m(ChildComponents));
+            return m(Layout, { codeSample: window.codeSamples['ChildComponents'] }, m(ChildComponents));
         }
     },
 
@@ -145,7 +156,7 @@ m.route(document.getElementById('app'), '/', {
             currentPage = 8;
         },
         render: function() {
-            return m(Layout, m(DataMapping));
+            return m(Layout, { codeSample: window.codeSamples['DataMapping'] }, m(DataMapping));
         }
     },
 
@@ -154,7 +165,7 @@ m.route(document.getElementById('app'), '/', {
             currentPage = 9;
         },
         render: function() {
-            return m(Layout, m(ThirdPartyLibrary));
+            return m(Layout, { codeSample: window.codeSamples['ThirdPartyLibrary'] }, m(ThirdPartyLibrary));
         }
     },
 
@@ -163,7 +174,7 @@ m.route(document.getElementById('app'), '/', {
             currentPage = 10;
         },
         render: function() {
-            return m(Layout, m(Requests));
+            return m(Layout, { codeSample: window.codeSamples['Requests'] }, m(Requests));
         }
     },
 
@@ -172,7 +183,7 @@ m.route(document.getElementById('app'), '/', {
             currentPage = 11;
         },
         render: function(vnode) {
-            return m(Layout, m(RouteParams, { user: vnode.attrs.user }));
+            return m(Layout, { codeSample: window.codeSamples['RouteParams'] }, m(RouteParams, { user: vnode.attrs.user }));
         }
     },
 
@@ -181,7 +192,7 @@ m.route(document.getElementById('app'), '/', {
             currentPage = 12;
         },
         render: function() {
-            return m(Layout, m(Streams));
+            return m(Layout, { codeSample: window.codeSamples['Streams'] }, m(Streams));
         }
     },
 
@@ -190,7 +201,7 @@ m.route(document.getElementById('app'), '/', {
             currentPage = 13;
         },
         render: function() {
-            return m(Layout, m(JSX));
+            return m(Layout, { codeSample: window.codeSamples['JSX'] }, m(JSX));
         }
     },
 
@@ -199,7 +210,7 @@ m.route(document.getElementById('app'), '/', {
             currentPage = 14;
         },
         render: function() {
-            return m(Layout, m(End));
+            return m(Layout, { codeSample: window.codeSamples['End'] }, m(End));
         }
     }
 });
